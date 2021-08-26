@@ -18,7 +18,7 @@ public class age_range_compatibility_equation {
         public static String datingRange(int age) {
             //return min-max
             // Пока ещё удаетса решить в одну строчку кода ))
-            return age <= 14?((int)(age-0.1*age)) +"-"+ ((int)(age+0.1*age)):(int)age/2+7 +"-"+((age-7)*2);
+            return age <= 14?((int)(age-0.1*age)) +"-"+ ((int)(age+0.1*age)):age/2+7 +"-"+((age-7)*2);
         }
     }
 }
