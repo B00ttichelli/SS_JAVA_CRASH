@@ -34,7 +34,7 @@ public class two_fighters_one_winner {
                 fighter1.isAttacker = false;
                 fighter2.isAttacker = true; // ну я щас тебе вмажу
                 if (fighter2.health <=0){
-                    break;
+                    break; // вмажу еси не труп
                 }
             } else {
 
