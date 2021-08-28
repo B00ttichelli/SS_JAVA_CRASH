@@ -9,13 +9,13 @@ public class opposite_number {
     public static void main(String[] args) {
 
 
-            assertEquals(-1, opposite(1));
+            assertEquals(-25, opposite(25));
 
     }
 
     public static int opposite(int number)
     {
-        return number>0?-number:+number;
+        return -number;
     }
 
 
