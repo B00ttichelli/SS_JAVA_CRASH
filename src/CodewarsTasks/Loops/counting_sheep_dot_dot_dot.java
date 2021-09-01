@@ -28,5 +28,5 @@ public class counting_sheep_dot_dot_dot
         return Arrays.stream(arrayOfSheeps).filter(a->a==Boolean.TRUE).toArray().length;
     }
 
-    // Задача с подвохом, пришлось повозитса пока не прочитал внимательно условия
+    // Задача с подвохом, пришлось повозитсо пока не прочитал внимательно условия
 }
