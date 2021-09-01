@@ -1,4 +1,4 @@
-package Loops;
+package CodewarsTasks.Loops;
 
 import org.junit.Test;
 
