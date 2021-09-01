@@ -18,6 +18,6 @@ public class will_there_be_enough_space {
     public static int enough(int cap, int on, int wait){
         // your code here
 
-        return cap>=on+wait?0:on-wait;
+        return cap>=on+wait?0:on!=0?on-wait:wait-cap;
     }
 }
