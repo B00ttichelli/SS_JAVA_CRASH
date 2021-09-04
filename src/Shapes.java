@@ -1,5 +1,7 @@
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Objects;
 /* [Circle [radius=2.00],
 Rectangle [height=2.00, width=3.00],
  Circle [radius=1.00],
@@ -16,7 +18,7 @@ class Shapes {
 
 
 
-    public static void main(String[] args) {
+  /*  public static void main(String[] args) {
 
         // пример из условия
      List<Shape> shapes =  new ArrayList<Shape>();
@@ -41,10 +43,10 @@ class Shapes {
              ) {
             System.out.println(x.getName());
         }
-    }
+    }*/
 }
 
-abstract class Shape {
+abstract class Shape  {
 
     // Code
 
@@ -57,6 +59,7 @@ abstract class Shape {
     public String getName(){
         return name;
     }
+
 }
 
 class Circle extends Shape {
@@ -77,15 +80,43 @@ class Circle extends Shape {
         return 3.00*radius;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Circle circle = (Circle) o;
+        return Double.compare(circle.getRadius(), getRadius()) == 0;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getRadius(),super.getName());
+    }
 }
 class Rectangle extends Shape {
     private double height;
     private double width;
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Rectangle rectangle = (Rectangle) o;
+        return Double.compare(rectangle.getHeight(), getHeight()) == 0 && Double.compare(rectangle.getWidth(), getWidth()) == 0;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getHeight(), getWidth(),super.getName());
+    }
+
     // Code
     public Rectangle(String name,double height, double width){
         super(name);
         this.height = height;
         this.width = width;
+
+
 
     }
 
@@ -108,7 +139,8 @@ class Rectangle extends Shape {
 class MyUtils {
     public List<Shape> maxAreas(List<Shape> shapes) {
         // C
-        List<Shape> result = new ArrayList<Shape>();
+
+        HashSet<Shape> hashSet = new HashSet<>();
 
         if (!shapes.isEmpty()) {
 
@@ -123,12 +155,14 @@ class MyUtils {
 
             for (Shape x : shapes) {
                 if (x.getArea() == maxArea) {
-                    result.add(x);
+                    hashSet.add(x);
                 }
             }
 
         }
-        return result;
+
+
+        return new ArrayList<Shape>(hashSet);
 
     }
 }
