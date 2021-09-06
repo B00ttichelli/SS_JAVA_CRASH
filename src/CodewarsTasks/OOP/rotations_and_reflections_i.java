@@ -1,4 +1,4 @@
-package CodewarsTasks.oop;
+package CodewarsTasks.OOP;
 
 public class rotations_and_reflections_i {
 

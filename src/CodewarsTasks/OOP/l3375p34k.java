@@ -1,4 +1,4 @@
-package CodewarsTasks.oop;
+package CodewarsTasks.OOP;
 
 /*
         a -> 4
@@ -9,8 +9,6 @@ package CodewarsTasks.oop;
         u -> (_)
 */
 
-
-import org.junit.Test;
 
 import static org.junit.Assert.assertTrue;
 

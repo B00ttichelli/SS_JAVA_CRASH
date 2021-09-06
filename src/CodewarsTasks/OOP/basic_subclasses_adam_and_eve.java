@@ -1,4 +1,4 @@
-package CodewarsTasks.oop;
+package CodewarsTasks.OOP;
 
 import org.junit.Test;
 
