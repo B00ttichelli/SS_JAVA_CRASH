@@ -1,4 +1,4 @@
-package Collections;
+package CodewarsTasks.Collections;
 
 import org.junit.Test;
 
