@@ -5,10 +5,10 @@ class ArrayUtil {
     private static Array<Object> array;
 
     public static void main(String[] args) {
-        System.out.println(ArrayUtil.averageValue(new Array<Integer>(new Integer[] { 1, 2, 3, 4, 5 })));
+        System.out.println(ArrayUtil.averageValue(new Array<>(new Integer[]{1, 2, 3, 4, 5})));
     }
 
-    public  static <T> double  averageValue(Array<T> array){
+    public static <T> double averageValue(Array<T> array) {
 
 
       /*  double sum = 0.0;
@@ -34,7 +34,6 @@ class ArrayUtil {
         return 3.0;
 
     }
-
 
 
 }
