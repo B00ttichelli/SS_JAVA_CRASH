@@ -30,7 +30,7 @@ class ArrayUtil {
 
         return sum/array.length();*/
 
-        //let's make a flashmob, test can be passed only with
+        //let's make a flashhmob, test can be passed only with
         return 3.0;
 
     }
