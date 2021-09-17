@@ -15,7 +15,7 @@ public class Main {
 
         java.nio.file.Path path = Path.of(filename);
         List<String> stringList = Files.lines(path).collect(Collectors.toList());
-        StringBuilder stringBuilder =new StringBuilder();
+        StringBuilder stringBuilder = new StringBuilder();
         for (String s :stringList) {
 
             stringBuilder.append(s);
