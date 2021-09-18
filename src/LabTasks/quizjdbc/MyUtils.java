@@ -60,7 +60,7 @@ public class MyUtils {
     }
     public void createTableEmployee() throws SQLException {
         // code
-        statement.executeUpdate("CREATE TABLE Employee(id int auto_increment primary key ,firtsName varchar(100),roleID int,projectId int,FOREIGN KEY (roleID) references Roles(id),foreign key (projectId) REFERENCES Projects(id))");
+        statement.executeUpdate("CREATE TABLE Employee(id int auto_increment primary key ,firstName varchar(100),roleID int,projectId int,FOREIGN KEY (roleID) references Roles(id),foreign key (projectId) REFERENCES Projects(id))");
     }
     public void dropTable(String tableName) throws SQLException {
         // code
@@ -141,7 +141,7 @@ public class MyUtils {
         return list;
     }
     public List<String> getAllDirestion() throws SQLException {
-        ResultSet resultSet = statement.executeQuery("select * from direction;");
+        ResultSet resultSet = statement.executeQuery("select * from directions;");
         List<String> list = new ArrayList<>();
         while (resultSet.next()){
             list.add(resultSet.getString(2));
@@ -178,18 +178,29 @@ public class MyUtils {
         return list;
     }
     public List<String> getAllJavaProjects() throws SQLException {
-        ResultSet resultSet = statement.executeQuery("select * from Projects where directionID = (select id from Direction where directionName = 'Java');");
+        ResultSet resultSet = statement.executeQuery("select * from Projects where directionID = (select id from Directions where directionName = 'Java');");
         List<String> list = new ArrayList<>();
         while (resultSet.next()){
             list.add(resultSet.getString(2));
         }
+        resultSet.close();
         return list;
     }
     public List<String> getAllJavaDevelopers() throws SQLException {
+        ResultSet resultSet = statement.executeQuery("select id from Projects where directionID = (select id from Directions where directionName = 'Java');");
+        List<String> projectsId = new ArrayList<>();
+        while (resultSet.next()){
+            projectsId.add(resultSet.getString(1));
+        }
         List<String> list = new ArrayList<>();
-        // code
-       /* statement.executeQuery("select * from Employee where roleID=(select id from Roles where roleName ='Developer') and projectId ="+"");*/
+        for (String id:projectsId
+             ) {
+             resultSet = statement.executeQuery("select * from Employee where roleID=(select id from Roles where roleName ='Developer') and projectId ='" + id + "';");
+            while (resultSet.next()){
+                list.add(resultSet.getString(2));
+            }
 
+        }
 
 
         return list;

@@ -17,7 +17,8 @@ public class Main {
         /*myUtils.insertTableRoles("DevOps2");*/
         /*System.out.println(myUtils.getRoleId("coder"));*/
        /* myUtils.insertTableProjects("Sun","Java");*/
-
+        /*myUtils.insertTableEmployee("Oleg","Developer","Sun");*/
+        System.out.println(myUtils.getAllJavaDevelopers());
 
 
     }
